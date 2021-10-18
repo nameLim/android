@@ -1,13 +1,15 @@
 package Java;
 
-public class StudyClub {
-
+public abstract class StudyClub {
     public String title;
-    private int memberNum;
-    public boolean open;
+    public int memberCnt;
 
+    public abstract void setMemberCnt(int memberCnt);
     public void printTitle() {
         System.out.println("Study Club");
     }
-
 }
+
+
+
+
