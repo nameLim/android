@@ -30,16 +30,16 @@ public class NaverShopSearch {
         return response;
     }
 
-    public List<ItemDto> fromJSONtoItems(String result){
+    public List<ItemDto> fromJSONtoItems(String result) {
         JSONObject rjson = new JSONObject(result);
         JSONArray items = rjson.getJSONArray("items");
 
         List<ItemDto> itemList = new ArrayList<>();
-        for(int i=0; i<items.length(); i++) {
+        for (int i = 0; i < items.length(); i++) {
             JSONObject itemJson = items.getJSONObject(i);
             ItemDto itemDto = new ItemDto(itemJson);
             itemList.add(itemDto);
         }
-        return  itemList;
+        return itemList;
     }
 }

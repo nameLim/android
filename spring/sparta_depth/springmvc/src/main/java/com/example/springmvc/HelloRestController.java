@@ -15,6 +15,7 @@ public class HelloRestController {
     public String helloHtmlString() {
         return "<html><body>Hello @ResponseBody</body></html>";
     }
+
     @GetMapping("/json/list")
     public List<String> helloJson() {
         List<String> words = Arrays.asList("Hello", "Controller", "And", "JSON");

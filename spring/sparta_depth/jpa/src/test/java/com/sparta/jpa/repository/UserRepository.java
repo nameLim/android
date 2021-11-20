@@ -19,10 +19,10 @@ class UserRepositoryTest {
         User instance1 = new User("user1", "정국", "불족발");
 // 회원 "user1" 객체 또 생성
         User instance2 = new User("user1", "정국", "불족발");
-        assert(instance2 != instance1);
+        assert (instance2 != instance1);
 // 회원 "user1" 객체 또또 생성
         User instance3 = new User("user1", "정국", "불족발");
-        assert(instance3 != instance2);
+        assert (instance3 != instance2);
 
 // 회원 "user1" 객체 추가
         User user1 = new User("user1", "정국", "불족발");
@@ -46,15 +46,15 @@ class UserRepositoryTest {
 
 // 회원 "user1" 을 조회
         User foundUser1 = userRepository.findById("user1").orElse(null);
-        assert(foundUser1 != savedUser);
+        assert (foundUser1 != savedUser);
 
 // 회원 "user1" 을 또 조회
         User foundUser2 = userRepository.findById("user1").orElse(null);
-        assert(foundUser2 != savedUser);
+        assert (foundUser2 != savedUser);
 
 // 회원 "user1" 을 또또 조회
         User foundUser3 = userRepository.findById("user1").orElse(null);
-        assert(foundUser3 != savedUser);
+        assert (foundUser3 != savedUser);
 
 // ------------------------------------
 // 테스트 회원 데이터 삭제

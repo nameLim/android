@@ -47,7 +47,7 @@ function execSearch() {
      * 검색결과 목록: #search-result-box
      * 검색결과 HTML 만드는 함수: addHTML
      */
-    // 1. 검색창의 입력값을 가져온다.
+        // 1. 검색창의 입력값을 가져온다.
     let query = $('#query').val();
     // 2. 검색창 입력값을 검사하고, 입력하지 않았을 경우 focus.
     if (query == '') {
@@ -105,11 +105,11 @@ function addProduct(itemDto) {
     // 1. POST /api/products 에 관심 상품 생성 요청
     // 2. 응답 함수에서 modal을 뜨게 하고, targetId 를 reponse.id 로 설정 (숙제로 myprice 설정하기 위함)
     $.ajax({
-        type:"POST",
-        url:"/api/products",
-        data:JSON.stringify(itemDto),
+        type: "POST",
+        url: "/api/products",
+        data: JSON.stringify(itemDto),
         contentType: "application/json",
-        success: function(response){
+        success: function (response) {
             $('#container').addClass('active');
             targetId = response.id;
         }
@@ -129,10 +129,10 @@ function showProduct() {
     $.ajax({
         type: "GET",
         url: "/api/products",
-        success: function (response){
+        success: function (response) {
             $('#product-container').empty();
             $('#search-result-box').empty();
-            for(let i=0; i<response.length; i++){
+            for (let i = 0; i < response.length; i++) {
                 let product = response[i];
                 let tempHtml = addProductItem(product);
                 $('#product-container').append(tempHtml);
@@ -155,7 +155,7 @@ function addProductItem(product) {
                     <div class="lprice">
                         <span>${numberWithCommas(product.lprice)}</span>원
                     </div>
-                    <div class="isgood ${product.lpric <= product.myprice? '' : ' none'}">
+                    <div class="isgood ${product.lpric <= product.myprice ? '' : ' none'}">
                         최저가 ${product.myprice}
                     </div>
                 </div>

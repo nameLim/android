@@ -1,4 +1,5 @@
 package com.sparta.week02.domain;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

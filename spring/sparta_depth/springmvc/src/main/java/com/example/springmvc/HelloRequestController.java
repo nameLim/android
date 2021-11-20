@@ -15,8 +15,7 @@ public class HelloRequestController {
 // GET http://localhost:8080/hello/request/star/BTS/age/28
     @GetMapping("/star/{name}/age/{age}")
     @ResponseBody
-    public String helloRequestPath(@PathVariable String name, @PathVariable int age)
-    {
+    public String helloRequestPath(@PathVariable String name, @PathVariable int age) {
         return String.format("Hello, @PathVariable.<br> name = %s, age = %d", name, age);
     }
 

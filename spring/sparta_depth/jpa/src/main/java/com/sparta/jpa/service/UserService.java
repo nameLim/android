@@ -24,19 +24,19 @@ public class UserService {
 
 // beforeSavedUser: 영속화되기 전 상태의 자바 일반객체
 // savedUser:영속성 컨텍스트 1차 캐시에 저장된 객체
-        assert(beforeSavedUser != savedUser);
+        assert (beforeSavedUser != savedUser);
 
 // 회원 "user1" 을 조회
         User foundUser1 = userRepository.findById("user1").orElse(null);
-        assert(foundUser1 == savedUser);
+        assert (foundUser1 == savedUser);
 
 // 회원 "user1" 을 또 조회
         User foundUser2 = userRepository.findById("user1").orElse(null);
-        assert(foundUser2 == savedUser);
+        assert (foundUser2 == savedUser);
 
 // 회원 "user1" 을 또또 조회
         User foundUser3 = userRepository.findById("user1").orElse(null);
-        assert(foundUser3 == savedUser);
+        assert (foundUser3 == savedUser);
 
         return foundUser3;
     }
@@ -52,7 +52,7 @@ public class UserService {
 
 // 회원 "user1" 조회
         User deletedUser1 = userRepository.findById("user1").orElse(null);
-        assert(deletedUser1 == null);
+        assert (deletedUser1 == null);
 
 // -------------------
 // 테스트 회원 "user1" 객체를 다시 추가
@@ -61,14 +61,14 @@ public class UserService {
 
 // 회원 "user1" 객체를 영속화
         User savedSecondUser = userRepository.save(secondUser);
-        assert(savedFirstUser != savedSecondUser);
-        assert(savedFirstUser.getUsername().equals(savedSecondUser.getUsername()));
-        assert(savedFirstUser.getNickname().equals(savedSecondUser.getNickname()));
-        assert(savedFirstUser.getFavoriteFood().equals(savedSecondUser.getFavoriteFood()));
+        assert (savedFirstUser != savedSecondUser);
+        assert (savedFirstUser.getUsername().equals(savedSecondUser.getUsername()));
+        assert (savedFirstUser.getNickname().equals(savedSecondUser.getNickname()));
+        assert (savedFirstUser.getFavoriteFood().equals(savedSecondUser.getFavoriteFood()));
 
 // 회원 "user1" 조회
         User foundUser = userRepository.findById("user1").orElse(null);
-        assert(foundUser == savedSecondUser);
+        assert (foundUser == savedSecondUser);
 
         return foundUser;
     }
@@ -87,10 +87,10 @@ public class UserService {
 // 회원 "user1" 을 조회
         User foundUser = userRepository.findById("user1").orElse(null);
 // 중요!) foundUser 는 DB 값이 아닌 1차 캐시에서 가져오는 값
-        assert(foundUser == savedUser);
-        assert(foundUser.getUsername().equals(savedUser.getUsername()));
-        assert(foundUser.getNickname().equals(savedUser.getNickname()));
-        assert(foundUser.getFavoriteFood().equals(savedUser.getFavoriteFood()));
+        assert (foundUser == savedUser);
+        assert (foundUser.getUsername().equals(savedUser.getUsername()));
+        assert (foundUser.getNickname().equals(savedUser.getNickname()));
+        assert (foundUser.getFavoriteFood().equals(savedUser.getFavoriteFood()));
 
         return foundUser;
     }
@@ -109,7 +109,7 @@ public class UserService {
 // user1 을 저장
         User savedUser2 = userRepository.save(savedUser1);
 
-        assert(savedUser1 == savedUser2);
+        assert (savedUser1 == savedUser2);
 
         return savedUser2;
     }

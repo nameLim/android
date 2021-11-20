@@ -28,7 +28,7 @@ public class PersonController {
         return personRepository.findAll();
     }
 
-    @PutMapping ("/api/persons/{id}")
+    @PutMapping("/api/persons/{id}")
     public Long updatePersons(@PathVariable Long id, @RequestBody PersonRequestDto requestDto) {
         return personService.update(id, requestDto);
     }
